@@ -15,3 +15,6 @@ Business copy is based on owner-provided starter content. Equipment, authority, 
 
 ## SEO
 Each page includes a unique title, description, canonical URL and structured data. An XML sitemap is available at https://adeel12335.github.io/marne-logistics/sitemap.xml. Update absolute URLs if adding a custom domain.
+
+## Motion
+Shared lightweight CSS and JavaScript add entrance and scroll reveals, hover effects, an animated mobile menu, scroll progress and a back-to-top control. Device reduced-motion preferences are respected; content remains readable when JavaScript or animation support is unavailable.

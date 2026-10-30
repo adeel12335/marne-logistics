@@ -1,0 +1,73 @@
+/* Lightweight motion, shared across all pages. Content remains visible without JS. */
+:root{--motion-ease:cubic-bezier(.2,.75,.25,1)}
+html{scroll-padding-top:120px}
+.header{position:sticky;top:0;z-index:100;transition:box-shadow .3s ease,border-color .3s ease}
+.header.is-scrolled{box-shadow:0 7px 28px #00132933;border-bottom-color:#d7af594d}
+.scroll-progress{position:fixed;inset:0 0 auto;height:3px;z-index:200;pointer-events:none}
+.scroll-progress span{display:block;height:100%;background:linear-gradient(90deg,#bc8d36,#f6d98d);transform:scaleX(0);transform-origin:left}
+.header #navigation>a:after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--motion-ease)}
+.header #navigation>a:hover:after,.header #navigation>a:focus-visible:after,.header #navigation>a[aria-current=page]:after{transform:scaleX(1)}
+.header .brand img{transition:filter .3s ease}
+.header .brand:hover img{filter:brightness(1.12)}
+.intro-reveal{animation:marne-arrive .85s var(--motion-ease) both;animation-delay:var(--intro-delay,0ms)}
+.reveal{transition:opacity .65s var(--motion-ease),transform .65s var(--motion-ease);transition-delay:var(--reveal-delay,0ms)}
+.reveal.reveal-pending{opacity:0;transform:translate3d(0,22px,0)}
+.reveal.is-visible,.reveal:focus-within{opacity:1;transform:translate3d(0,0,0)}
+.service-card,.content-card,.audience{transition:transform .3s var(--motion-ease),box-shadow .3s ease,border-color .3s ease,opacity .65s var(--motion-ease)}
+.service-card.reveal-pending,.content-card.reveal-pending,.audience.reveal-pending{transition-delay:var(--reveal-delay,0ms)}
+.service-card.is-visible,.content-card.is-visible,.audience.is-visible{transition-delay:var(--reveal-delay,0ms)}
+.service-card,.content-card{position:relative}
+.service-card:after,.content-card:after{content:'';position:absolute;left:18px;right:18px;bottom:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:center;transition:transform .3s var(--motion-ease)}
+.icon-circle,.card-icon svg,.ring-icon{transition:transform .35s var(--motion-ease),box-shadow .3s ease}
+.button{position:relative;isolation:isolate;overflow:hidden;transition:transform .25s var(--motion-ease),box-shadow .25s ease,filter .25s ease}
+.button:before{content:'';position:absolute;inset:-1px;background:linear-gradient(105deg,transparent 25%,#ffffff50 50%,transparent 75%);transform:translateX(-130%);z-index:-1;pointer-events:none;transition:transform .6s ease}
+.button span,.text-link span,.audience p span{display:inline-block;transition:transform .25s var(--motion-ease)}
+.button:active{transform:translateY(0) scale(.98)}
+.team-photo img,.editorial-photo{transition:transform .65s var(--motion-ease)}
+.download-link{transition:transform .25s var(--motion-ease),border-color .25s ease,box-shadow .25s ease}
+.download-link>span{transition:transform .25s var(--motion-ease)}
+.faq-list summary{position:relative;list-style:none;padding-right:35px}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary:after{content:'+';position:absolute;right:4px;top:-2px;color:#aa7c2a;font-size:25px;font-weight:400;line-height:1;transition:transform .25s ease}
+.faq-list details[open] summary:after{transform:rotate(45deg)}
+.faq-list details[open]>p{animation:marne-faq .3s ease both}
+.back-to-top{position:fixed;right:25px;bottom:25px;z-index:90;width:46px;height:46px;display:grid;place-items:center;border:1px solid #e3bd6b;border-radius:50%;background:#09243df2;color:#efc875;box-shadow:0 5px 20px #00152933;cursor:pointer;visibility:hidden;opacity:0;transform:translateY(12px);transition:opacity .25s ease,transform .25s ease,visibility .25s}
+.back-to-top svg{width:21px;height:21px;stroke-width:2}
+.back-to-top.is-visible{visibility:visible;opacity:1;transform:translateY(0)}
+.back-to-top:hover{background:#153651;transform:translateY(-3px)}
+@keyframes marne-arrive{from{opacity:0;transform:translate3d(0,18px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes marne-faq{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+@keyframes marne-menu{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+@media(hover:hover) and (pointer:fine){
+ .service-card:hover,.content-card:hover{transform:translateY(-6px);box-shadow:0 12px 30px #06243b13;border-color:#d0ac63}
+ .service-card:hover:after,.content-card:hover:after{transform:scaleX(1)}
+ .service-card:hover .icon-circle{transform:translateY(-3px) rotate(-5deg);box-shadow:0 5px 14px #09243d26}
+ .content-card:hover .card-icon svg{transform:translateY(-3px) rotate(-4deg)}
+ .values article:hover .ring-icon{transform:translateY(-4px);box-shadow:0 0 24px #d7af5920}
+ .button:hover{transform:translateY(-2px);box-shadow:0 7px 20px #001a3026}
+ .button:hover:before{transform:translateX(130%)}
+ .button:hover span,.text-link:hover span,.audience:hover p span{transform:translateX(4px)}
+ .audience:hover{transform:translateY(-5px);box-shadow:0 10px 25px #001a3029}
+ .team-photo:hover img{transform:scale(1.035)}
+ .editorial-photo:hover{transform:scale(1.015)}
+ .download-link:hover{transform:translateX(4px);box-shadow:0 5px 18px #001a3009}
+ .download-link:hover>span{transform:translateY(3px)}
+}
+@media(max-width:760px){
+ html{scroll-padding-top:95px}
+ .menu-toggle span{transition:transform .25s var(--motion-ease),opacity .2s ease;transform-origin:center}
+ .menu-toggle[aria-expanded=true] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+ .menu-toggle[aria-expanded=true] span:nth-child(2){opacity:0}
+ .menu-toggle[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+ #navigation.open{animation:marne-menu .25s var(--motion-ease) both;max-height:calc(100dvh - 110px);overflow-y:auto}
+ .header #navigation>a:after{right:auto;width:30px}
+ .back-to-top{width:42px;height:42px;right:16px;bottom:18px}
+ .reveal.reveal-pending{transform:translate3d(0,14px,0)}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto!important}
+ *,*:before,*:after{animation:none!important;transition:none!important}
+ .reveal.reveal-pending,.reveal.is-visible,.intro-reveal{opacity:1!important;transform:none!important}
+ .service-card:hover,.content-card:hover,.audience:hover,.button:hover,.team-photo:hover img,.editorial-photo:hover,.download-link:hover{transform:none!important}
+}
+@media print{.header{position:static}.scroll-progress,.back-to-top{display:none}.reveal,.intro-reveal{opacity:1!important;transform:none!important;animation:none!important}}
