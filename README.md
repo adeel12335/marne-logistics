@@ -18,3 +18,6 @@ Each page includes a unique title, description, canonical URL and structured dat
 
 ## Motion
 Shared lightweight CSS and JavaScript add entrance and scroll reveals, hover effects, an animated mobile menu, scroll progress and a back-to-top control. Device reduced-motion preferences are respected; content remains readable when JavaScript or animation support is unavailable.
+
+## Mobile layout
+Phone and tablet layouts use larger touch targets, readable form controls, a scrollable navigation panel, responsive image sources and smaller WebP backgrounds. The layout has been checked at 320, 390, 430, 768 and 844-pixel viewport widths, including landscape orientation.
