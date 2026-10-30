@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://adeel12335.github.io/marne-logistics/sitemap.xml
