@@ -2,7 +2,7 @@
 
 Responsive, static company website.
 
-Live website: https://adeel12335.github.io/marne-logistics/
+Live website: https://marnelogistics.com/
 
 ## Updating the website
 Edit the HTML, CSS, JavaScript or assets on the main branch. GitHub Pages publishes the repository root automatically. No dependency installation or build step is needed.
@@ -14,7 +14,7 @@ The inquiry forms download a text file locally. They do not send email or save s
 Business copy is based on owner-provided starter content. Equipment, authority, capacity and scheduling require confirmation per shipment. The logo is a vector reconstruction; photographs are AI-recreated illustrative assets.
 
 ## SEO
-Each page includes a unique title, description, canonical URL and structured data. An XML sitemap is available at https://adeel12335.github.io/marne-logistics/sitemap.xml. Update absolute URLs if adding a custom domain.
+Each page includes a unique title, description, canonical URL and structured data. An XML sitemap is available at https://marnelogistics.com/sitemap.xml. Canonical URLs use this custom domain.
 
 ## Motion
 Shared lightweight CSS and JavaScript add entrance and scroll reveals, hover effects, an animated mobile menu, scroll progress and a back-to-top control. Device reduced-motion preferences are respected; content remains readable when JavaScript or animation support is unavailable.
