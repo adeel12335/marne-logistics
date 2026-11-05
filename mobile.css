@@ -207,3 +207,5 @@ img{max-width:100%}
  .hero-inner{padding-top:30px;padding-bottom:40px}
 }
 @media(prefers-reduced-motion:reduce){.reveal{transition:none!important}.header #navigation.open{animation:none!important}}
+.header .brand{flex:0 0 auto}.header .brand img{width:auto;height:72px}.footer-brand{flex-basis:auto;width:auto}.footer-brand img{width:auto;height:64px}
+@media(max-width:760px){.header .brand img{height:56px}.footer-brand img{height:56px}}

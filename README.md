@@ -8,7 +8,7 @@ Live website: https://marnelogistics.com/
 Edit the HTML, CSS, JavaScript or assets on the main branch. GitHub Pages publishes the repository root automatically. No dependency installation or build step is needed.
 
 ## Inquiries
-The inquiry forms download a text file locally. They do not send email or save submissions online. A verified company contact and an approved form service are needed before online submissions can be enabled.
+Inquiry forms submit online through FormSubmit. Set the company inbox in `inquiryInbox` at the top of `app.js`. Until that address is supplied, the form shows an error and does not claim the inquiry was received. Do not publish a phone number, email address, USDOT, MC number, insurance limit, or equipment claim until the owner confirms it.
 
 ## Content and imagery
 Business copy is based on owner-provided starter content. Equipment, authority, capacity and scheduling require confirmation per shipment. The logo is a vector reconstruction; photographs are AI-recreated illustrative assets.
